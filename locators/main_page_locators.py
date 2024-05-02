@@ -23,8 +23,5 @@ class MainPageLocators:
     QUESTION_7 = (By.ID, "//div[@id='accordion__heading-6']")
     ANSWER_7 = (By.ID, "//div[@id='accordion__panel-6']")
 
-    UPPER_ORDER_BUTTON = (By.CLASS_NAME, "//button[@class='Button_Button__ra12g']")
-    BOTTOM_ORDER_BUTTON = (By.CLASS_NAME, "//button[@class='Button_Button__ra12g Button_UltraBig__UU3Lp']")
-
-    YANDEX_LOGO = (By.CLASS_NAME, '//a[@class="Header_LogoYandex__3TSOI"]')
-    SCOOTER_LOGO = (By.XPATH, '//a[@class="Header_LogoScooter__3lsAR"]')
+    UPPER_ORDER_BUTTON = (By.XPATH, "//button[@class='Button_Button__ra12g']")
+    BOTTOM_ORDER_BUTTON = (By.XPATH, "//button[@class='Button_Button__ra12g Button_UltraBig__UU3Lp']")

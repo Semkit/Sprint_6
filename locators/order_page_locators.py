@@ -5,7 +5,7 @@ class OrderPageLocators:
     NAME_INPUT_FIELD = (By.XPATH, "//input[@placeholder='* Имя']")
     SECOND_NAME_INPUT_FIELD = (By.XPATH, "//input[@placeholder='* Фамилия']")
     ADRESS_INPUT_FIELD = (By.XPATH, "//input[@placeholder='* Адрес: куда привезти заказ']")
-    METRO_STATION_INPUT_FILED = (By.XPATH,)
+    METRO_STATION_INPUT_FILED = (By.XPATH, "//input[@class='select-search__input']")
     PHONE_NUMBER_INPUT_FIELD = (By.XPATH, "//input[@placeholder='* Телефон: на него позвонит курьер']")
     CONTINUE_BUTTON = (By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")
 
