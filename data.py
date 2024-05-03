@@ -1,1 +1,1 @@
-url = 'https://qa-scooter.praktikum-services.ru/'
+URL = 'https://qa-scooter.praktikum-services.ru/'

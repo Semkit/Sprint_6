@@ -1,7 +1,8 @@
 from selenium.webdriver.common.by import By
+from locators.base_page_locators import BasePageLocators
 
 
-class MainPageLocators:
+class MainPageLocators(BasePageLocators):
     QUESTION_1 = (By.ID, "//div[@id='accordion__heading-0']")
     ANSWER_1 = (By.ID, "//div[@id='accordion__panel-0']")
 
@@ -23,5 +24,4 @@ class MainPageLocators:
     QUESTION_7 = (By.ID, "//div[@id='accordion__heading-6']")
     ANSWER_7 = (By.ID, "//div[@id='accordion__panel-6']")
 
-    UPPER_ORDER_BUTTON = (By.XPATH, "//button[@class='Button_Button__ra12g']")
     BOTTOM_ORDER_BUTTON = (By.XPATH, "//button[@class='Button_Button__ra12g Button_UltraBig__UU3Lp']")

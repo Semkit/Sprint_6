@@ -1,7 +1,8 @@
 from selenium.webdriver.common.by import By
+from locators.base_page_locators import BasePageLocators
 
 
-class OrderPageLocators:
+class OrderPageLocators(BasePageLocators):
     NAME_INPUT_FIELD = (By.XPATH, "//input[@placeholder='* Имя']")
     SECOND_NAME_INPUT_FIELD = (By.XPATH, "//input[@placeholder='* Фамилия']")
     ADRESS_INPUT_FIELD = (By.XPATH, "//input[@placeholder='* Адрес: куда привезти заказ']")
