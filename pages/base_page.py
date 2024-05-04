@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators.base_page_locators import BasePageLocators
 
+
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
@@ -15,15 +16,10 @@ class BasePage:
     def switch_driver(self):
         self.driver.switch_to.window(self.driver.window_handles[-1])
 
-    @allure.step('Выставляем ожидание до появления элемента с указанным локатором')
+    @allure.step('Очевидно дожидаемся нужного элемента по локатору')
     def wait_and_find_element(self, locator):
         WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(locator))
         return self.driver.find_element(*locator)
-
-    @allure.step('Вытягиваем текст из элемента с указанным локатором')
-    def find_text(self, locator):
-        element = self.driver.find_element(*locator)
-        return element.text
 
     @allure.step('Ожидание появления заголовка на странице')
     def wait_for_title_is(self, title):
@@ -45,19 +41,23 @@ class BasePage:
 
     @allure.step('Нажимаем на кнопку Принять Куки')
     def cookie_click(self):
-        self.click(*BasePageLocators.ACCEPT_COOKIE)
+        self.click(BasePageLocators.ACCEPT_COOKIE)
 
     @allure.step('Нажимаем на кнопку Заказа вверху страницы')
     def order_upper_button_click(self):
-        self.click(*BasePageLocators.UPPER_ORDER_BUTTON)
+        self.click(BasePageLocators.UPPER_ORDER_BUTTON)
+
+    @allure.step('Нажимаем на кнопку Заказа внизу страницы')
+    def order_bottom_button_click(self):
+        self.click(BasePageLocators.BOTTOM_ORDER_BUTTON)
 
     @allure.step('Нажимаем на кнопку сервиса Самокат вверху страницы')
-    def order_upper_button_click(self):
-        self.click(*BasePageLocators.SCOOTER_LOGO)
+    def scooter_logo_button_click(self):
+        self.click(BasePageLocators.SCOOTER_LOGO)
 
     @allure.step('Нажимаем на кнопку Яндекса вверху страницы')
-    def order_upper_button_click(self):
-        self.click(*BasePageLocators.YANDEX_LOGO)
+    def yandex_logo_button_click(self):
+        self.click(BasePageLocators.YANDEX_LOGO)
 
 
 
