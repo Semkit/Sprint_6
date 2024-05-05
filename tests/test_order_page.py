@@ -1,12 +1,14 @@
 from pages.order_page import OrderPage
 import allure
 import pytest
+
+
 class TestOrderPage:
 
     @allure.title('Заполнение формы заказа самоката')
     @allure.description('Заполняем форму заказа самоката, используя две кнопки Заказать как точки входа')
     @pytest.mark.parametrize('order_button', ['order_upper_button_click', 'order_bottom_button_click'])
-    def test_order_page_scenario_1(self, driver, order_button):
+    def test_order_page(self, driver, order_button):
         order_page = OrderPage(driver)
         order_page.cookie_click()
         order_button_func = getattr(order_page, order_button)
@@ -22,4 +24,4 @@ class TestOrderPage:
         order_page.pick_a_duration()
         order_page.order_confirmation()
 
-        assert order_page.order_confirmed
+        assert order_page.order_confirmed()

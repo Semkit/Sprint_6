@@ -55,5 +55,8 @@ class OrderPage(BasePage):
     @allure.step('Находим текст в окне с подтвержденным заказом')
     def order_confirmed(self):
         self.wait_and_find_element(OrderPageLocators.ORDER_CONFIRMATION_TABLE)
+        return True
+
+
 
 

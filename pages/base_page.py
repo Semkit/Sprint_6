@@ -43,21 +43,6 @@ class BasePage:
     def cookie_click(self):
         self.click(BasePageLocators.ACCEPT_COOKIE)
 
-    @allure.step('Нажимаем на кнопку Заказа вверху страницы')
-    def order_upper_button_click(self):
-        self.click(BasePageLocators.UPPER_ORDER_BUTTON)
-
-    @allure.step('Нажимаем на кнопку Заказа внизу страницы')
-    def order_bottom_button_click(self):
-        self.click(BasePageLocators.BOTTOM_ORDER_BUTTON)
-
-    @allure.step('Нажимаем на кнопку сервиса Самокат вверху страницы')
-    def scooter_logo_button_click(self):
-        self.click(BasePageLocators.SCOOTER_LOGO)
-
-    @allure.step('Нажимаем на кнопку Яндекса вверху страницы')
-    def yandex_logo_button_click(self):
-        self.click(BasePageLocators.YANDEX_LOGO)
 
 
 

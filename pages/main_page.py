@@ -2,14 +2,15 @@ from pages.base_page import BasePage
 import allure
 from locators.main_page_locators import MainPageLocators
 
-from selenium.webdriver.common.by import By
+
 @allure.step('Вытаскиваем по номеру и возвращаем локаторы вопросов')
 def question_locator(number):
-    return (By.ID, f"accordion__heading-{number}")
+    return MainPageLocators.QUESTIONS[number]
+
 
 @allure.step('Вытаскиваем по номеру и возвращаем локаторы ответов')
 def answer_locator(number):
-    return (By.ID, f"accordion__panel-{number}")
+    return MainPageLocators.ANSWERS[number]
 
 
 class MainPage(BasePage):
@@ -25,8 +26,24 @@ class MainPage(BasePage):
 
     @allure.step('Скроллим до нужного элемента')
     def scroll_to_element(self):
-        self.scroll(MainPageLocators.QUESTION_1)
+        self.scroll(MainPageLocators.QUESTIONS[1])
 
     @allure.step('Ожидаем появления элемента, до которого скроллили')
     def wait_for_element_appears(self):
-        self.wait_and_find_element(MainPageLocators.QUESTION_1)
+        self.wait_and_find_element(MainPageLocators.QUESTIONS[1])
+
+    @allure.step('Нажимаем на кнопку Заказа вверху страницы')
+    def order_upper_button_click(self):
+        self.click(MainPageLocators.UPPER_ORDER_BUTTON)
+
+    @allure.step('Нажимаем на кнопку Заказа внизу страницы')
+    def order_bottom_button_click(self):
+        self.click(MainPageLocators.BOTTOM_ORDER_BUTTON)
+
+    @allure.step('Нажимаем на кнопку сервиса Самокат вверху страницы')
+    def scooter_logo_button_click(self):
+        self.click(MainPageLocators.SCOOTER_LOGO)
+
+    @allure.step('Нажимаем на кнопку Яндекса вверху страницы')
+    def yandex_logo_button_click(self):
+        self.click(MainPageLocators.YANDEX_LOGO)

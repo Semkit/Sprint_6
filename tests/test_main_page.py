@@ -28,7 +28,7 @@ class TestMainPageTransitions:
         main_page = MainPage(driver)
         main_page.order_upper_button_click()
         main_page.scooter_logo_button_click()
-        assert driver.current_url == data.URL
+        assert main_page.get_current_url() == data.URL
 
     @allure.title('Проверка перехода на страницу Дзена после нажатия на лого Яндекса')
     @allure.description('Нажимаем на лого Яндекса и проверяем, что новое окно — Яндекс Дзен')
